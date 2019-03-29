@@ -4,13 +4,13 @@ return [
     'baseUrl' => 'http://jaytyrrell.co.test/',
     'production' => false,
     'siteName' => 'Jay Tyrrell',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
-    'siteAuthor' => 'Author Name',
+    'siteDescription' => 'Personal website of Jay Tyrrell',
+    'siteAuthor' => 'Jay Tyrrell',
 
     // collections
     'collections' => [
         'posts' => [
-            'author' => 'Author Name', // Default author, if not provided in a post
+            'author' => 'Jay Tyrrell', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'blog/{filename}',
         ],

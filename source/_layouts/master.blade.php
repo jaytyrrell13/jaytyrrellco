@@ -6,11 +6,6 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="{{ $page->meta_description ?? $page->siteDescription }}">
 
-        <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:description" content="{{ $page->siteDescription }}" />
-
         <title>{{ $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
 
         <link rel="home" href="{{ $page->baseUrl }}">
@@ -18,28 +13,24 @@
 
         @stack('meta')
 
-        @if ($page->production)
-            <!-- Insert analytics code here -->
-        @endif
-
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex items-center shadow bg-white border-b h-16 py-4" role="banner">
+        <header class="flex items-center h-16 py-4" role="banner">
             <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg text-blue-darkest font-semibold hover:text-blue-dark my-0">{{ $page->siteName }}</h1>
+                        <h1 class="text-lg text-grey-dark font-normal hover:text-blue-dark my-0">{{ $page->siteName }}</h1>
                     </a>
                 </div>
 
-                <div class="flex flex-1 justify-end items-center">
+                {{-- <div class="flex flex-1 justify-end items-center">
                     @include('_nav.menu')
 
                     @include('_nav.menu-toggle')
-                </div>
+                </div> --}}
             </div>
         </header>
 
@@ -49,17 +40,10 @@
             @yield('body')
         </main>
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
-            <ul class="flex flex-col md:flex-row justify-center list-reset">
-                <li class="md:mr-2">
-                    &copy; Jay Tyrrell {{ date('Y') }}.
-                </li>
+        <footer class="text-center text-sm py-4" role="contentinfo">
+            <p><a href="mailto:jay@jaytyrrell.co">Email</a> - <a href="https://github.com/jaytyrrell13" target="_blank">GitHub</a> - <a href="https://www.linkedin.com/in/jaytyrrell" target="_blank">LinkedIn</a></p>
 
-                <li>
-                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
-                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
-                </li>
-            </ul>
+            <p>Copyright &copy; Jay Tyrrell {{ date('Y') }}. Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.</p>
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>

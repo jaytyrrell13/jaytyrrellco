@@ -3,13 +3,15 @@
 @section('body')
     <h1>Hey, I'm Jay Tyrrell!</h1>
 
-    <img src="/assets/img/about.png"
-        alt="About image"
-        class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10">
+    <img src="/assets/img/headshot.jpg" alt="Headshot" class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10 p-1 border-grey-lighter border-2">
 
-    <p class="mb-6">This is where you can give a little more information about yourself or site. If you'd like to change the structure of this page, you can find the file at <code>source/about.blade.php</code></p>
+    <p>I'm a Senior Software Engineer at <a href="https://ableto.com" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
 
-    <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum officia dolorem accusantium veniam quae, possimus, temporibus explicabo magni voluptas. fugit natus deserunt atque veniam possimus earum harum itaque est!</p>
+    <p>I was born and raised in Pompano Beach, Florida but moved to New York City in May, 2012.</p>
 
-    <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum officia dolorem accusantium veniam quae, possimus, temporibus explicabo magni voluptas. fugit natus deserunt atque veniam!</p>
+    <p>In October, 2010 I started working at EDB Solutions. My responsibilities included designing and coding client sites for small businesses located nationwide. When I moved to New York, I continued working remotely until the end of July.</p>
+
+    <p>In December of that year, I started part-time as an intern at CourseHorse. My responsibilities included creating newsletters and testing the site for quality assurance. After about a month, I also started working part-time as a QA Engineer at MEV. In August, 2013 I decided to join full-time as Software Engineer at CourseHorse. My responsibilities included building/deploying new features, developing tools to make development more efficient, and fixing bugs.</p>
+
+    <p>In February, 2016 I started working at AbleTo.</p>
 @endsection
