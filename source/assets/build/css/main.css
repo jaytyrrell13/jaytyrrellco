@@ -649,6 +649,7 @@ a {
 
 a:hover {
   color: #1a4d8c;
+  text-decoration: underline;
 }
 
 blockquote {

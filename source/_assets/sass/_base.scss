@@ -8,6 +8,7 @@ a {
 
     &:hover {
         @apply .text-blue-darker;
+        @apply .underline;
     }
 }
 
