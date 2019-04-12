@@ -10,10 +10,6 @@
 @section('body')
     <h1>{{ $page->title }}</h1>
 
-    <div class="text-2xl border-b border-blue-lighter mb-6 pb-10">
-        @yield('content')
-    </div>
-
     @foreach ($page->posts($posts) as $post)
         @include('_components.post-preview-inline')
 

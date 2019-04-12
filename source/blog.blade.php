@@ -1,4 +1,5 @@
 ---
+title: Blog
 pagination:
     collection: posts
     perPage: 4
@@ -14,8 +15,6 @@ pagination:
 
 @section('body')
     <h1>Blog</h1>
-
-    <hr class="border-b my-6">
 
     @foreach ($pagination->items as $post)
         @include('_components.post-preview-inline')
