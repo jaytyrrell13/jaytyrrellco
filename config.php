@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl' => 'http://jaytyrrell.co.test/',
+    'baseUrl' => 'http://jaytyrrellco.test/',
     'production' => false,
     'siteName' => 'Jay Tyrrell',
     'siteDescription' => 'Personal website of Jay Tyrrell',
