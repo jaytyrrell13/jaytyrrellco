@@ -43,7 +43,7 @@
         <footer class="text-center text-sm py-4" role="contentinfo">
             <p><a href="mailto:jay@jaytyrrell.co">Email</a> - <a href="https://github.com/jaytyrrell13" target="_blank">GitHub</a> - <a href="https://www.linkedin.com/in/jaytyrrell" target="_blank">LinkedIn</a></p>
 
-            <p>Copyright &copy; Jay Tyrrell {{ date('Y') }}. Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.</p>
+            <p>Copyright &copy; Jay Tyrrell {{ date('Y') }}. Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten" target="_blank">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework" target="_blank">Tailwind CSS</a>.</p>
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>

@@ -7,7 +7,7 @@
 
     <p>I'm a Senior Software Engineer at <a href="https://ableto.com" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
 
-    <p>I was born and raised in Pompano Beach, Florida but moved to New York City in May, 2012.</p>
+    <p>I was born and raised in Pompano Beach, Florida and moved to New York City in May, 2012.</p>
 
     <p>In October, 2010 I started working at EDB Solutions. My responsibilities included designing and coding client sites for small businesses located nationwide. When I moved to New York, I continued working remotely until the end of July.</p>
 
