@@ -5,7 +5,7 @@
 
     <img src="/assets/img/headshot.jpg" alt="Headshot" class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10 p-1 border-grey-lighter border-2">
 
-    <p>I'm a Senior Software Engineer at <a href="https://ableto.com" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
+    <p>I'm a Software Engineer II at <a href="https://ableto.com" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
 
     <p>I was born and raised in Pompano Beach, Florida and moved to New York City in May, 2012.</p>
 

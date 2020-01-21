@@ -18,8 +18,18 @@
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex items-center h-16 py-4" role="banner">
-            <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+        <header class="flex items-center justify-between container max-w-lg mx-auto border-b py-3">
+            <div>
+                <a href="/" class="text-grey-dark hover:no-underline" title="{{ $page->siteName }} home">
+                    <h1 class="text-lg font-normal mb-0">{{ $page->siteName }}</h1>
+                </a>
+            </div>
+
+            @include('_nav.menu')
+        </header>
+
+        {{-- <header class="flex items-center h-16 py-4" role="banner">
+            <div class="container flex items-center max-w-xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
                         <h1 class="text-lg text-grey-dark font-normal hover:text-blue-dark my-0">{{ $page->siteName }}</h1>
@@ -32,18 +42,18 @@
                     @include('_nav.menu-toggle')
                 </div>
             </div>
-        </header>
+        </header> --}}
 
         @include('_nav.menu-responsive')
 
-        <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        <main role="main" class="flex-auto w-full container max-w-lg mx-auto py-16">
             @yield('body')
         </main>
 
         <footer class="text-center text-sm py-4" role="contentinfo">
             <p><a href="mailto:jay@jaytyrrell.co">Email</a> - <a href="https://github.com/jaytyrrell13" target="_blank">GitHub</a> - <a href="https://www.linkedin.com/in/jaytyrrell" target="_blank">LinkedIn</a></p>
 
-            <p>Copyright &copy; Jay Tyrrell {{ date('Y') }}. Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten" target="_blank">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework" target="_blank">Tailwind CSS</a>.</p>
+            <p>Copyright &copy; Jay Tyrrell {{ date('Y') }}</p>
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
