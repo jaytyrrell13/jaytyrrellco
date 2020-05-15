@@ -768,8 +768,11 @@ blockquote {
 
 code {
   --bg-opacity: 1;
-  background-color: #9FB3C8;
-  background-color: rgba(159, 179, 200, var(--bg-opacity));
+  background-color: #DCEEFB;
+  background-color: rgba(220, 238, 251, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #0A558C;
+  color: rgba(10, 85, 140, var(--text-opacity));
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1px;
@@ -790,27 +793,9 @@ code.hljs .hljs-meta {
   font-style: normal;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  --text-opacity: 1;
-  color: #102A43;
-  color: rgba(16, 42, 67, var(--text-opacity));
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
@@ -886,23 +871,22 @@ p {
 }
 
 pre {
-  --bg-opacity: 1;
-  background-color: #BCCCDC;
-  background-color: rgba(188, 204, 220, var(--bg-opacity));
-  line-height: 1.75;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
-  padding: 1rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  font-size: 1rem;
 }
 
 pre code {
-  background-color: transparent;
+  --bg-opacity: 1;
+  background-color: #DCEEFB;
+  background-color: rgba(220, 238, 251, var(--bg-opacity));
   display: block;
-  padding: 0;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  --text-opacity: 1;
+  color: #0A558C;
+  color: rgba(10, 85, 140, var(--text-opacity));
 }
 
 ::-moz-selection {
@@ -921,29 +905,6 @@ pre code {
   --text-opacity: 1;
   color: #FFF;
   color: rgba(255, 255, 255, var(--text-opacity));
-}
-
-.nav-menu {
-  --bg-opacity: 1;
-  background-color: #BCCCDC;
-  background-color: rgba(188, 204, 220, var(--bg-opacity));
-  padding-bottom: 0.5rem;
-  padding-top: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  width: auto;
-}
-
-.nav-menu__item {
-  display: block;
-  text-decoration: none;
-  margin-bottom: 1rem;
-  margin-top: 0;
-  --text-opacity: 1;
-  color: #243B53;
-  color: rgba(36, 59, 83, var(--text-opacity));
-  font-size: .925rem;
 }
 
 .space-y-0 > :not(template) ~ :not(template){

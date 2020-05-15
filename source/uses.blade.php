@@ -9,7 +9,7 @@
 
 @section('body')
     <div class="max-w-3xl mx-auto mt-8">
-        <h1>Uses</h1>
+        <h2>Uses</h2>
 
         <p><a href="https://uses.tech/">Uses.tech</a></p>
 

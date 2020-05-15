@@ -14,7 +14,7 @@ pagination:
 
 @section('body')
     <div class="max-w-3xl mx-auto mt-8">
-        <h1>Blog</h1>
+        <h2>Blog</h2>
 
         @foreach ($pagination->items as $post)
             @include('_components.post-preview-inline')

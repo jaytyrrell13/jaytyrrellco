@@ -9,7 +9,7 @@
 
 @section('body')
     <div class="max-w-3xl mx-auto mt-8">
-        <h1>Contact</h1>
+        <h2>Contact</h2>
 
         <p class="mb-8">
             Static sites are unable to handle form submissions. However, there are third-party services, like Tighten’s <a href="https://fieldgoal.io" title="FieldGoal">FieldGoal</a>, which can accept the form submission, email you the result, and redirect back to a thank you page.

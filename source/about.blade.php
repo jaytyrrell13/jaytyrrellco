@@ -9,7 +9,7 @@
 
 @section('body')
     <div class="max-w-3xl mx-auto mt-8">
-        <h1>About</h1>
+        <h2>About</h2>
 
         <img src="/assets/img/about.png"
             alt="About image"

@@ -8,11 +8,11 @@
             <img src="/assets/images/headshot.jpg" alt="Picture of Jay Tyrrell" class="rounded-full border-4 border-white" height="280" width="280">
         </div>
         <div>
-            <h2 class="leading-none">Welcome!</h2>
+            <h2 class="mb-2">Welcome!</h2>
 
-            <p>I'm Jay Tyrrell, a software engineer at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
+            <p class="mb-2">I'm Jay Tyrrell, a software engineer at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
 
-            <p>I primarily work in PHP using the <a href="https://laravel.com/" target="_blank">Laravel</a> framework and Javascript using <a href="https://vuejs.org/" target="_blank">Vue.js</a>.</p>
+            <p class="mb-2">I primarily work in PHP using the <a href="https://laravel.com/" target="_blank">Laravel</a> framework and Javascript using <a href="https://vuejs.org/" target="_blank">Vue.js</a>.</p>
 
             <p class="mb-0"><a href="#">Learn More</a></p>
         </div>
