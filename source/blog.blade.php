@@ -1,4 +1,5 @@
 ---
+title: Blog
 pagination:
     collection: posts
     perPage: 10

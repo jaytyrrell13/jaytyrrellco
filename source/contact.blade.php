@@ -1,3 +1,6 @@
+---
+title: Contact
+---
 @extends('_layouts.master')
 
 @push('meta')
