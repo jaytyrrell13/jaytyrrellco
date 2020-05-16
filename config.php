@@ -6,7 +6,7 @@ return [
     'baseUrl' => 'http://jaytyrrellco.test',
     'production' => false,
     'siteName' => 'Jay Tyrrell',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
+    'siteDescription' => 'The personal site and blog of Jay Tyrrell',
     'siteAuthor' => 'Jay Tyrrell',
 
     // collections
