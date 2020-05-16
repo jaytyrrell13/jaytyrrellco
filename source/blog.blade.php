@@ -13,10 +13,12 @@ pagination:
     <meta property="og:description" content="The list of blog posts for {{ $page->siteName }}" />
 @endpush
 
-@section('body')
-    <div class="max-w-3xl mx-auto mt-8">
-        <h2>Blog</h2>
+@section('hero')
+    <h2 class="mb-0">Blog</h2>
+@endsection
 
+@section('body')
+    <div class="max-w-3xl mx-auto">
         @foreach ($pagination->items as $post)
             @include('_components.post-preview-inline')
 

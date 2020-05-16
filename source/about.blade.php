@@ -10,10 +10,12 @@ title: About
     <meta property="og:description" content="A little bit about {{ $page->siteName }}" />
 @endpush
 
-@section('body')
-    <div class="max-w-3xl mx-auto mt-8">
-        <h2>About</h2>
+@section('hero')
+    <h2 class="mb-0">About</h2>
+@endsection
 
+@section('body')
+    <div class="max-w-3xl mx-auto">
         <img src="/assets/img/about.png"
             alt="About image"
             class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10">

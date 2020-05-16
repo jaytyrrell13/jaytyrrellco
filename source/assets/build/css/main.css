@@ -743,11 +743,11 @@ a {
 
 a:hover {
   --text-opacity: 1;
-  color: #4098D7;
-  color: rgba(64, 152, 215, var(--text-opacity));
+  color: #2680C2;
+  color: rgba(38, 128, 194, var(--text-opacity));
   --border-opacity: 1;
-  border-color: #4098D7;
-  border-color: rgba(64, 152, 215, var(--border-opacity));
+  border-color: #2680C2;
+  border-color: rgba(38, 128, 194, var(--border-opacity));
 }
 
 blockquote {
@@ -891,8 +891,8 @@ pre code {
 
 ::-moz-selection {
   --bg-opacity: 1;
-  background-color: #2680C2;
-  background-color: rgba(38, 128, 194, var(--bg-opacity));
+  background-color: #4098D7;
+  background-color: rgba(64, 152, 215, var(--bg-opacity));
   --text-opacity: 1;
   color: #FFF;
   color: rgba(255, 255, 255, var(--text-opacity));
@@ -900,8 +900,8 @@ pre code {
 
 ::selection {
   --bg-opacity: 1;
-  background-color: #2680C2;
-  background-color: rgba(38, 128, 194, var(--bg-opacity));
+  background-color: #4098D7;
+  background-color: rgba(64, 152, 215, var(--bg-opacity));
   --text-opacity: 1;
   color: #FFF;
   color: rgba(255, 255, 255, var(--text-opacity));

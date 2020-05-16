@@ -7,13 +7,15 @@
     <meta property="og:description" content="{{ $page->description }}" />
 @endpush
 
+@section('hero')
+    <h2 class="mb-0">{{ $page->title }}</h2>
+@endsection
+
 @section('body')
-    <div class="max-w-3xl mx-auto mt-8">
+    <div class="max-w-3xl mx-auto">
         @if ($page->cover_image)
             <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
         @endif
-
-        <h2 class="mb-8">{{ $page->title }}</h2>
 
         <p class="text-gray-700 text-lg mb-2">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
 

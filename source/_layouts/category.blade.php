@@ -7,10 +7,12 @@
     <meta property="og:description" content="{{ $page->description }}" />
 @endpush
 
-@section('body')
-    <div class="max-w-3xl mx-auto mt-8">
-        <h2>{{ $page->title }}</h2>
+@section('hero')
+    <h2 class="mb-0">{{ $page->title }}</h2>
+@endsection
 
+@section('body')
+    <div class="max-w-3xl mx-auto">
         <div class="mb-8">
             @yield('content')
         </div>

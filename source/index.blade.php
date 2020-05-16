@@ -1,9 +1,7 @@
 @extends('_layouts.master')
 
-@section('body')
-
-<div class="bg-gray-050 py-8 border-b border-gray-100 mb-8">
-    <div class="flex max-w-3xl mx-auto">
+@section('hero')
+    <div class="flex">
         <div class="mr-8">
             <img src="/assets/images/headshot.jpg" alt="Picture of Jay Tyrrell" class="rounded-full border-4 border-white" height="280" width="280">
         </div>
@@ -17,8 +15,9 @@
             <p class="mb-0"><a href="#">Learn More</a></p>
         </div>
     </div>
-</div>
+@endsection
 
+@section('body')
 <div class="max-w-3xl mx-auto">
     <h3>Latest Articles</h3>
 
