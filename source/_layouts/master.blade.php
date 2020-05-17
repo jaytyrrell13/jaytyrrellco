@@ -52,7 +52,7 @@
             @yield('body')
         </main>
 
-        <footer class="bg-white text-center text-xs mt-12" role="contentinfo">
+        <footer class="bg-white text-center text-xs mt-12 border-t-2 border-gray-100" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-none">
                 <li class="md:mr-2">
                     &copy; Jay Tyrrell {{ date('Y') }}.

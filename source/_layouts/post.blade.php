@@ -29,7 +29,7 @@
             @endforeach
         @endif
 
-        <div class="border-b border-blue-200 mb-10 mt-8 pb-4">
+        <div class="mt-8">
             @yield('content')
         </div>
 

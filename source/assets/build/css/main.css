@@ -752,8 +752,8 @@ a:hover {
 
 blockquote {
   --border-opacity: 1;
-  border-color: #4098D7;
-  border-color: rgba(64, 152, 215, var(--border-opacity));
+  border-color: #2680C2;
+  border-color: rgba(38, 128, 194, var(--border-opacity));
   border-left-width: 4px;
   font-weight: 400;
   font-style: italic;
@@ -887,24 +887,6 @@ pre code {
   --text-opacity: 1;
   color: #0A558C;
   color: rgba(10, 85, 140, var(--text-opacity));
-}
-
-::-moz-selection {
-  --bg-opacity: 1;
-  background-color: #4098D7;
-  background-color: rgba(64, 152, 215, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #FFF;
-  color: rgba(255, 255, 255, var(--text-opacity));
-}
-
-::selection {
-  --bg-opacity: 1;
-  background-color: #4098D7;
-  background-color: rgba(64, 152, 215, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #FFF;
-  color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .space-y-0 > :not(template) ~ :not(template){
