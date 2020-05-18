@@ -8,7 +8,7 @@
         <div>
             <h2 class="mb-2">Welcome!</h2>
 
-            <p class="mb-2">I'm Jay Tyrrell, a software engineer at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
+            <p class="mb-2">I'm Jay Tyrrell, a full-stack developer at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>. We are a leading provider of virtual behavioral health care.</p>
 
             <p class="mb-2">I primarily work in PHP using the <a href="https://laravel.com/" target="_blank">Laravel</a> framework and Javascript using <a href="https://vuejs.org/" target="_blank">Vue.js</a>.</p>
 
