@@ -12,7 +12,7 @@
 
             <p class="mb-2">I primarily work in PHP using the <a href="https://laravel.com/" target="_blank">Laravel</a> framework and Javascript using <a href="https://vuejs.org/" target="_blank">Vue.js</a>.</p>
 
-            <p class="mb-0"><a href="#">Learn More</a></p>
+            <p class="mb-0"><a href="/about">Learn More</a></p>
         </div>
     </div>
 @endsection
