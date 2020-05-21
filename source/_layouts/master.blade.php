@@ -58,10 +58,11 @@
                     &copy; Jay Tyrrell {{ date('Y') }}.
                 </li>
 
-                <li>
-                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a>
-                    and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
+                <li class="md:mr-2">
+                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
                 </li>
+
+                <li>Hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</li>
             </ul>
         </footer>
 
