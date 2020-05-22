@@ -18,7 +18,6 @@
 @endsection
 
 @section('body')
-<div class="max-w-3xl mx-auto">
     <h3>Latest Articles</h3>
 
     @foreach ($posts->take(6)->chunk(2) as $row)
@@ -34,5 +33,4 @@
             <hr class="w-full border-b mt-2 mb-6">
         @endif
     @endforeach
-</div>
 @stop

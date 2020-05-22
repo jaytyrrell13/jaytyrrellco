@@ -5,13 +5,11 @@
 @endsection
 
 @section('body')
-    <div class="max-w-3xl mx-auto">
-        <div class="mb-8">
-            @yield('content')
-        </div>
-
-        @foreach ($page->posts($posts) as $post)
-            @include('_components.post-preview-inline')
-        @endforeach
+    <div class="mb-8">
+        @yield('content')
     </div>
+
+    @foreach ($page->posts($posts) as $post)
+        @include('_components.post-preview-inline')
+    @endforeach
 @stop
