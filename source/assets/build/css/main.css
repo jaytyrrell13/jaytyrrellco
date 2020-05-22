@@ -673,21 +673,9 @@ code {
   font-size: .925rem;
 }
 
-code.hljs {
-  background-color: transparent;
-  padding: 0;
-}
-
-code.hljs .hljs-comment,
-code.hljs .hljs-keyword,
-code.hljs .hljs-meta {
-  font-weight: 400;
-  font-style: normal;
-}
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -728,6 +716,11 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3rem;
   border-radius: 9999px;
+}
+
+li {
+  margin-left: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 li ul,
