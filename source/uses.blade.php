@@ -3,13 +3,6 @@ title: Uses
 ---
 @extends('_layouts.master')
 
-@push('meta')
-    <meta property="og:title" content="About {{ $page->siteName }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="A little bit about {{ $page->siteName }}" />
-@endpush
-
 @section('hero')
     <h2 class="mb-0">Uses</h2>
 @endsection

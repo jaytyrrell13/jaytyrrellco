@@ -6,18 +6,11 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="{{ $page->meta_description ?? $page->siteDescription }}">
 
-        <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:description" content="{{ $page->siteDescription }}" />
-
         <title>{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}</title>
 
         <link rel="home" href="{{ $page->baseUrl }}">
         {{-- <link rel="icon" href="/favicon.ico"> --}}
         <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="{{ $page->siteName }} Atom Feed">
-
-        @stack('meta')
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
