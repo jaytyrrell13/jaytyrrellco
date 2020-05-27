@@ -18,7 +18,7 @@
 
     <body class="text-gray-800 flex flex-col justify-between min-h-screen bg-white leading-normal font-sans border-t-4 border-blue-500">
         <header class="flex items-center py-8 border-b border-gray-100" role="banner">
-            <div class="container flex items-center max-w-2xl mx-auto">
+            <div class="container flex items-center max-w-2xl mx-auto px-4">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center border-0">
                         <h1 class="text-xl text-gray-800 hover:text-blue-500 font-normal my-0">{{ $page->siteName }}</h1>
@@ -37,28 +37,18 @@
 
         <main role="main" class="flex-auto w-full">
             <div class="bg-gray-050 py-8 border-b border-gray-100 mb-8">
-                <div class="max-w-2xl mx-auto">
+                <div class="max-w-2xl mx-auto px-4">
                     @yield('hero')
                 </div>
             </div>
 
-            <div class="max-w-2xl mx-auto">
+            <div class="max-w-2xl mx-auto px-4">
                 @yield('body')
             </div>
         </main>
 
-        <footer class="bg-white text-center text-xs mt-12 border-t-2 border-gray-100" role="contentinfo">
-            <ul class="flex flex-col md:flex-row justify-center list-none">
-                <li class="md:mr-2">
-                    &copy; Jay Tyrrell {{ date('Y') }}.
-                </li>
-
-                <li class="md:mr-2">
-                    Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>.
-                </li>
-
-                <li>Hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.</li>
-            </ul>
+        <footer class="bg-white text-center text-xs mt-12 p-4" role="contentinfo">
+            &copy; Jay Tyrrell {{ date('Y') }}. Built with <a href="http://jigsaw.tighten.co" title="Jigsaw by Tighten">Jigsaw</a> and <a href="https://tailwindcss.com" title="Tailwind CSS, a utility-first CSS framework">Tailwind CSS</a>. Hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
         </footer>
 
         @stack('scripts')

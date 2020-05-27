@@ -124,5 +124,6 @@ module.exports = {
       }
       addUtilities(newUtilities)
     }
-  ]
+  ],
+  purge: false
 }
