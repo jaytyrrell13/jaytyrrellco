@@ -8,7 +8,7 @@ title: About
 @endsection
 
 @section('body')
-    <p>Hey! I'm Jay Tyrrell. I'm a full-stack developer based in New York. I was born and raised in South Florida and moved up here in 2012.</p>
+    <p>Hey! I'm Jay Tyrrell. I was born and raised in South Florida and moved to NYC in 2012. Recently, I moved to Bay Shore with my fiancé.</p>
 
     <p>I currently work at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>, a leading provider of virtual behavioral health care.</p>
 
