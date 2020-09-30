@@ -23,7 +23,7 @@ title: Uses
             </ul>
         </li>
         <li><strong>Laptop Stand</strong>: <a href="https://www.amazon.com/gp/product/B089RK4TB3/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">CR Aluminum Laptop Stand</a></li>
-        <li><strong>Monitor</strong>: <a href="https://www.vizio.com/e320fib2.html" target="_blank">Vizio E320fi-B2</a></li>
+        <li><strong>Monitor</strong>: <a href="https://www.amazon.com/gp/product/B07MKT2BNB/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1" target="_blank">LG 27UL650</a></li>
         <li><strong>Mouse</strong>: <a href="https://www.amazon.com/gp/product/B0148NPIQK/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Logitech M535</a></li>
         <li><strong>Phone</strong>: <a href="https://www.apple.com/iphone-xr/specs/" target="_blank">iPhone XR</a>
             <ul>
