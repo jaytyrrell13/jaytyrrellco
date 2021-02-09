@@ -8,7 +8,7 @@ title: About
 @endsection
 
 @section('body')
-    <p>Hey! I'm Jay Tyrrell. I was born and raised in South Florida and moved to NYC in 2012. Recently, I moved to Bay Shore with my wife.</p>
+    <p>Hey! I'm Jay Tyrrell. I was born and raised in South Florida and moved to NYC in 2012. Now, I am living in Bay Shore, NY with my wife.</p>
 
     <p>I currently work at <a href="https://www.ableto.com/" target="_blank">AbleTo</a>, a leading provider of virtual behavioral health care.</p>
 
@@ -23,6 +23,7 @@ title: About
     <ul class="mt-2">
         <li>PHP</li>
         <li>Javascript</li>
+        <li>Node</li>
     </ul>
 
     <p class="mb-0"><strong>Libraries & Frameworks</strong></p>
