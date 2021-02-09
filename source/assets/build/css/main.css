@@ -765,6 +765,44 @@ pre code {
   color: rgba(10, 85, 140, var(--text-opacity));
 }
 
+table {
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #D9E2EC;
+  border-color: rgba(217, 226, 236, var(--border-opacity));
+}
+
+table thead th {
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #D9E2EC;
+  border-color: rgba(217, 226, 236, var(--border-opacity));
+  border-right-width: 1px;
+}
+
+table tbody > tr:nth-child(even) {
+  --bg-opacity: 1;
+  background-color: #F0F4F8;
+  background-color: rgba(240, 244, 248, var(--bg-opacity));
+}
+
+table tbody td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #D9E2EC;
+  border-color: rgba(217, 226, 236, var(--border-opacity));
+  border-right-width: 1px;
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));

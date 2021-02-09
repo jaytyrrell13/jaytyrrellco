@@ -116,3 +116,33 @@ pre {
         @apply .text-blue-800;
     }
 }
+
+table {
+    @apply border;
+    @apply border-gray-100;
+
+    thead {
+        th {
+            @apply .text-left;
+            @apply .py-2;
+            @apply .px-4;
+            @apply .border-b;
+            @apply .border-gray-100;
+            @apply .border-r;
+        }
+    }
+
+    tbody {
+        > tr:nth-child(even) {
+            @apply .bg-gray-050;
+        }
+
+        td {
+            @apply .py-2;
+            @apply .px-4;
+            @apply .border-b;
+            @apply .border-gray-100;
+            @apply .border-r;
+        }
+    }
+}
