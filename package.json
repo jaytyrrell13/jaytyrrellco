@@ -10,11 +10,9 @@
         "cross-env": "^3.2.3",
         "laravel-mix": "^6.0.10",
         "laravel-mix-jigsaw": "^1.5.0",
-        "laravel-mix-purgecss": "^4.0.0||^5.0.0",
         "postcss": "^8.2.5",
         "sass": "^1.32.6",
-        "sass-loader": "^7.1.0",
-        "tailwindcss": "^1.9.6",
-        "vue-template-compiler": "^2.6.12"
+        "sass-loader": "^10.1.1",
+        "tailwindcss": "^1.9.6"
     }
 }
