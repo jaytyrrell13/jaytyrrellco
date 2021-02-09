@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    {{-- <h3 class="mb-6">Latest Articles</h3>
+    <h3 class="mt-12 mb-6">Latest Articles</h3>
 
     @foreach ($posts->take(6)->chunk(2) as $row)
         @foreach ($row as $post)
@@ -32,5 +32,5 @@
         @if (! $loop->last)
             <hr class="w-full border-b mt-2 mb-6">
         @endif
-    @endforeach --}}
+    @endforeach
 @stop
