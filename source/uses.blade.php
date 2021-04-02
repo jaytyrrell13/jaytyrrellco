@@ -46,9 +46,9 @@ title: Uses
     <h4 class="mt-8 mb-0">Software</h4>
     <ul class="mt-3">
         <li><a href="https://www.alfredapp.com/" target="_blank">Alfred</a></li>
-        <li><a href="https://brave.com/" target="_blank">Brave Browser</a></li>
         <li><a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a></li>
         <li><a href="https://github.com/tonsky/FiraCode" target="_blank">Fira Code</a> font</li>
+        <li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a></li>
         <li><a href="https://iterm2.com/" target="_blank">iTerm</a> with ZSH and <a href="https://github.com/hwyncho/ayu-iTerm" target="_blank">Ayu Mirage</a> theme</li>
         <li><a href="https://www.lastpass.com/" target="_blank">LastPass</a></li>
         <li><a href="https://www.notion.so/" target="_blank">Notion</a></li>
