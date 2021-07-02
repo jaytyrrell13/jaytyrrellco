@@ -3,84 +3,359 @@
     <title>Jay Tyrrell</title>
     <link href="https://jaytyrrell.co" />
     <link type="application/atom+xml" rel="self" href="https://jaytyrrell.co/blog/feed.atom" />
-    <updated>2020-05-18T01:22:11+00:00</updated>
+    <updated>2021-07-02T22:41:37+00:00</updated>
     <id>https://jaytyrrell.co/blog/feed.atom</id>
     <author>
         <name>Jay Tyrrell</name>
     </author>
                 <entry>
-    <id>https://jaytyrrell.co/blog/getting-started</id>
-    <link type="text/html" rel="alternate" href="https://jaytyrrell.co/blog/getting-started" />
-    <title>Getting Started</title>
-    <published>2018-12-25T00:00:00+00:00</published>
-    <updated>2018-12-25T00:00:00+00:00</updated>
+    <id>https://jaytyrrell.co/blog/time-zones-and-date-strings</id>
+    <link type="text/html" rel="alternate" href="https://jaytyrrell.co/blog/time-zones-and-date-strings" />
+    <title>Time zones and date strings</title>
+    <published>2021-07-02T00:00:00+00:00</published>
+    <updated>2021-07-02T00:00:00+00:00</updated>
     <author>
         <name>Jay Tyrrell</name>
     </author>
-    <summary type="html">This is a starter template for creating a beautiful, customizable blog with minimal effort. You’ll only have to change a few settings and you’re ready to go....</summary>
+    <summary type="html">Recently, I ran into an issue with time zones and date strings. I was running an Express app and the &lt;code&gt;toDate&lt;/code&gt; sanitizer from validator.js via express validator.
+
+Just for illustrative purposes, let&#039;s say I want to delete the oldest users that......</summary>
     <content type="html"><![CDATA[
-        <p>This is a starter template for creating a beautiful, customizable blog with minimal effort. You’ll only have to change a few settings and you’re ready to go.<!-- more --></p>
+        <p>Recently, I ran into an issue with time zones and date strings. I was running an <a href="https://expressjs.com/">Express app</a> and the <code>toDate</code> sanitizer from <a href="https://github.com/validatorjs/validator.js">validator.js</a> via <a href="https://express-validator.github.io/docs/">express validator</a>.</p>
 
-<h2>Configuration</h2>
+<p>Just for illustrative purposes, let's say I want to delete the oldest users that fall within a specific date range by making a request like this.</p>
 
-<p>As with all Jigsaw sites, configuration settings can be found in <code>config.php</code>; you can update the variables in that file with settings specific to your site. You can also add new configuration variables there to use across your site; take a look at the <a href="http://jigsaw.tighten.co/docs/site-variables/">Jigsaw documentation</a> to learn more.</p>
-
-<pre><code class="language-php">// config.php
-return [
-    'baseUrl' =&gt; 'https://my-awesome-jigsaw-site.com/',
-    'production' =&gt; false,
-    'siteName' =&gt; 'My Site',
-    'siteDescription' =&gt; 'Give your blog a boost with Jigsaw.',
-    ...
-];
+<pre><code class="language-js">axios.delete('/users', {
+  startDate: '2020-06-01',
+  endDate: '2020-09-01'
+})
 </code></pre>
 
-<blockquote>
-  <p>Tip: This configuration file is also where you’ll define any "collections" (for example, a collection of the contributors to your site, or a collection of blog posts organized by topic). Check out the official <a href="https://jigsaw.tighten.co/docs/collections/">Jigsaw documentation</a> to learn more.</p>
-</blockquote>
+<p>My route definition could look like this.</p>
 
-<hr />
+<pre><code class="language-js">app.delete('/users',
+  body('startDate').toDate(),
+  body('endDate').toDate(),
+  (req, res) =&gt; {
+    const startDate = req.body.startDate
+    const endDate = req.body.endDate
 
-<h3>Adding Content</h3>
-
-<p>You can write your content using a <a href="http://jigsaw.tighten.co/docs/content-other-file-types/">variety of file types</a>. By default, this starter template expects your content to be located in the <code>source/_posts/</code> folder.</p>
-
-<p>The top of each content page contains a YAML header that specifies how it should be rendered. The <code>title</code> attribute is used to dynamically generate HTML <code>title</code> and OpenGraph tags for each page. The <code>extends</code> attribute defines which parent Blade layout this content file will render with (e.g. <code>_layouts.post</code> will render with <code>source/_layouts/post.blade.php</code>), and the <code>section</code> attribute defines the Blade "section" that expects this content to be placed into it.</p>
-
-<pre><code class="language-yaml">---
-extends: _layouts.post
-section: content
-title: Getting Started
-date: 2018-12-25
-description: Getting started with the Jigsaw blog starter template
-cover_image: /assets/img/post-cover-image-2.png
-featured: true
----
+    // Delete all users where their created_at
+    // is between startDate and endDate
+  }
+)
 </code></pre>
 
-<h3>Adding Assets</h3>
+<p>Then, I can expect <code>startDate</code> and <code>endDate</code> to be instances of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> object. If you console log them you should see this.</p>
 
-<p>Any assets that need to be compiled (such as JavaScript, Less, or Sass files) can be added to the <code>source/_assets/</code> directory, and Laravel Mix will process them when running <code>npm run local</code> or <code>npm run production</code>. The processed assets will be stored in <code>/source/assets/build/</code> (note there is no underscore on this second <code>assets</code> directory).</p>
-
-<p>Then, when Jigsaw builds your site, the entire <code>/source/assets/</code> directory containing your built files (and any other directories containing static assets, such as images or fonts, that you choose to store there) will be copied to the destination build folders (<code>build_local</code>, on your local machine).</p>
-
-<p>Files that don't require processing (such as images and fonts) can be added directly to <code>/source/assets/</code>.</p>
-
-<p><a href="http://jigsaw.tighten.co/docs/compiling-assets/">Read more about compiling assets in Jigsaw using Laravel Mix.</a></p>
-
-<hr />
-
-<h2 id="getting-started-building-your-site">Building Your Site</h2>
-
-<p>Now that you’ve edited your configuration variables and know how to customize your styles and content, let’s build the site.</p>
-
-<pre><code class="language-bash"># build static files with Jigsaw
-./vendor/bin/jigsaw build
-
-# compile assets with Laravel Mix
-# options: dev, staging, production
-npm run dev
+<pre><code class="language-js">startDate 2020-06-01T00:00:00.000Z
+endDate 2020-08-01T00:00:00.000Z
 </code></pre>
+
+<p>Since there was no time portion in the request, the Date object interpreted it as midnight UTC. If there were any users that have a <code>created_at</code> column of 05/31/2020 at 9:00pm Eastern, they would be incorrectly deleted. The reason is because their <code>created_at</code> timestamp would be stored in the database as <code>2020-06-01T01:00:00.000Z</code> UTC.</p>
+
+<p>One solution to this problem would be to pass the timezone in the request like this.</p>
+
+<pre><code class="language-js">axios.delete('/users', {
+  startDate: '2020-06-01',
+  endDate: '2020-09-01',
+  timezone: 'America/New_York'
+})
+</code></pre>
+
+<p>Then, to remove the <code>toDate</code> sanitizers.</p>
+
+<pre><code class="language-js">app.delete('/users',
+  (req, res) =&gt; {
+    // ...
+  }
+)
+</code></pre>
+
+<p>You can manually parse the dates using a library like <a href="https://moment.github.io/luxon/">Luxon</a>.</p>
+
+<pre><code class="language-js">import { DateTime } from 'luxon'
+
+app.delete('/users', (req, res) =&gt; {
+  const timezone = req.body.timezone
+  const startDate = DateTime.fromFormat(req.body.startDate, 'yyyy-MM-dd', { zone: timezone })
+    .startOf('day')
+    .toUTC()
+    .toJSDate()
+  const endDate = DateTime.fromFormat(req.body.endDate, 'yyyy-MM-dd', { zone: timezone })
+    .startOf('day')
+    .toUTC()
+    .toJSDate()
+
+  // ...
+})
+</code></pre>
+
+<p>Now if you console log the start and end date, you should get the correct times.</p>
+
+<pre><code class="language-js">startDate 2020-06-01T04:00:00.000Z
+endDate 2020-08-01T04:00:00.000Z
+</code></pre>
+    ]]></content>
+</entry>
+            <entry>
+    <id>https://jaytyrrell.co/blog/custom-ordering-algorithm</id>
+    <link type="text/html" rel="alternate" href="https://jaytyrrell.co/blog/custom-ordering-algorithm" />
+    <title>Custom Ordering Algorithm</title>
+    <published>2021-05-15T00:00:00+00:00</published>
+    <updated>2021-05-15T00:00:00+00:00</updated>
+    <author>
+        <name>Jay Tyrrell</name>
+    </author>
+    <summary type="html">One approach to ordering data in MySQL would be to add an order by clause at the end of your query such as &lt;code&gt;ORDER BY id ASC&lt;/code&gt;. This works perfectly fine for simple queries, but it doesn&#039;t give you much control over the ordering. To get around......</summary>
+    <content type="html"><![CDATA[
+        <p>One approach to ordering data in MySQL would be to add an order by clause at the end of your query such as <code>ORDER BY id ASC</code>. This works perfectly fine for simple queries, but it doesn't give you much control over the ordering. To get around this, we can use an expression instead of a column.</p>
+
+<p>For example, let's say we have a table of posts like this:</p>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+</tbody>
+</table>
+
+<p>If we used the column approach, our query could be like this which would show the scheduled posts followed by the published and then the drafted posts.</p>
+
+<pre><code class="language-sql">select * from posts order by status desc;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>What if we wanted to show the published posts first followed by the scheduled posts and then the drafted posts? We can use an expression in place of the column in the order by clause. Our query can then become this.</p>
+
+<pre><code class="language-sql">select *
+from posts
+order by case status
+    when 'published' then 1
+    when 'scheduled' then 2
+    when 'drafted' then 3
+end;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>Much better! Now we have more granular control over the ordering of the data.</p>
+    ]]></content>
+</entry>
+            <entry>
+    <id>https://jaytyrrell.co/blog/conditional-aggregates</id>
+    <link type="text/html" rel="alternate" href="https://jaytyrrell.co/blog/conditional-aggregates" />
+    <title>Conditional Aggregates</title>
+    <published>2021-02-08T00:00:00+00:00</published>
+    <updated>2021-02-08T00:00:00+00:00</updated>
+    <author>
+        <name>Jay Tyrrell</name>
+    </author>
+    <summary type="html">Let&#039;s say in your database you have a posts table with an id column and a status column among others:
+
+
+
+
+  ID
+  Status
+
+
+
+
+  1
+  published
+
+
+  2
+  published
+
+
+  3
+  scheduled
+
+
+  4
+  scheduled
+
+
+  5
+  drafted
+
+
+
+
+In an admin panel, if we wanted to show......</summary>
+    <content type="html"><![CDATA[
+        <p>Let's say in your database you have a posts table with an id column and a status column among others:</p>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>In an admin panel, if we wanted to show the count of the posts with a particular status, we could write separate queries for each status like this.</p>
+
+<pre><code class="language-sql">select count(*) from posts where status = 'published';
+select count(*) from posts where status = 'scheduled';
+select count(*) from posts where status = 'drafted';
+</code></pre>
+
+<p>A better approach would be to perform a single query using Conditional Aggregates. In MySQL, you can use a <code>case</code> statement inside the parenthesis of the <code>count</code> function.</p>
+
+<pre><code class="language-sql">select
+    count(case status when 'published' then 1 end) as published,
+    count(case status when 'scheduled' then 1 end) as scheduled,
+    count(case status when 'drafted' then 1 end) as drafted
+from posts;
+</code></pre>
+
+<p>The results should show the count of each status in a separate column.</p>
+
+<table>
+<thead>
+<tr>
+  <th>published</th>
+  <th>scheduled</th>
+  <th>drafted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2</td>
+  <td>2</td>
+  <td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>as</code> keyword at the end of the count function is aliasing it as the name of the status for convenience. If you don't include it, the name of each column would be the entire <code>count()</code> function call.</p>
     ]]></content>
 </entry>
     </feed>
