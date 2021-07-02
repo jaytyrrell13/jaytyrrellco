@@ -5,7 +5,6 @@ title: Custom Ordering Algorithm
 date: 2021-05-15
 description: Using a custom ordering algorithm in MySQL.
 categories: [code]
-excerpt: Learn how to customize ordering data in MySQL.
 ---
 
 One approach to ordering data in MySQL would be to add an order by clause at the end of your query such as `ORDER BY id ASC`. This works perfectly fine for simple queries, but it doesn't give you much control over the ordering. To get around this, we can use an expression instead of a column.

@@ -5,7 +5,6 @@ title: Conditional Aggregates
 date: 2021-02-08
 description: Using conditional aggregates with MySQL
 categories: [code]
-excerpt: Learn how to use conditional aggregates with MySQL.
 ---
 
 Let's say in your database you have a posts table with an id column and a status column among others:
