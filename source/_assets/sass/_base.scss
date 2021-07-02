@@ -105,11 +105,11 @@ p {
 
 pre {
     @apply .my-6;
-    @apply .overflow-x-auto;
 
     code {
         @apply .bg-blue-050;
         @apply .block;
+        @apply .overflow-x-auto;
         @apply .p-4;
         @apply .rounded;
         @apply .text-base;
