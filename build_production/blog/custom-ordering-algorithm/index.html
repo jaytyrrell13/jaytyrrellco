@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="The personal site and blog of Jay Tyrrell">
 
-        <title>Configuration | Jay Tyrrell</title>
+        <title>Custom Ordering Algorithm | Jay Tyrrell</title>
 
         <link rel="home" href="https://jaytyrrell.co">
         
@@ -75,16 +75,169 @@
         <main role="main" class="flex-auto w-full">
             <div class="bg-gray-050 py-8 border-b border-gray-100 mb-8">
                 <div class="max-w-4xl mx-auto px-4">
-                        <h2 class="mb-0">Configuration</h2>
+                        <h2 class="mb-0">Custom Ordering Algorithm</h2>
                 </div>
             </div>
 
             <div class="max-w-4xl mx-auto px-4">
-                    <div class="mb-8">
-        <p>These posts are all related to configuring your Jigsaw blog starter template.</p>
+                    
+    <p class="text-gray-700 text-lg mb-2">Published May 15, 2021</p>
+
+                        <a
+                href="/blog/categories/code"
+                title="View posts in code"
+                class="inline-block bg-gray-050 hover:bg-blue-050 hover:text-blue-800 border-0 text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >code</a>
+            
+    <div class="mt-8">
+        <p>One approach to ordering data in MySQL would be to add an order by clause at the end of your query such as <code>ORDER BY id ASC</code>. This works perfectly fine for simple queries, but it doesn't give you much control over the ordering. To get around this, we can use an expression instead of a column.</p>
+
+<p>For example, let's say we have a table of posts like this:</p>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+</tbody>
+</table>
+
+<p>If we used the column approach, our query could be like this which would show the scheduled posts followed by the published and then the drafted posts.</p>
+
+<pre><code class="language-sql">select * from posts order by status desc;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>What if we wanted to show the published posts first followed by the scheduled posts and then the drafted posts? We can use an expression in place of the column in the order by clause. Our query can then become this.</p>
+
+<pre><code class="language-sql">select *
+from posts
+order by case status
+    when 'published' then 1
+    when 'scheduled' then 2
+    when 'drafted' then 3
+end;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Title 1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Title 5</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Title 3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Title 4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Title 2</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>Much better! Now we have more granular control over the ordering of the data.</p>
     </div>
 
-                </div>
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                            <a href="https://jaytyrrell.co/blog/conditional-aggregates" title="Older Post: Conditional Aggregates">
+                    &LeftArrow; Conditional Aggregates
+                </a>
+                    </div>
+
+        <div>
+                            <a href="https://jaytyrrell.co/blog/time-zones-and-date-strings" title="Newer Post: Time zones and date strings">
+                    Time zones and date strings &RightArrow;
+                </a>
+                    </div>
+    </nav>
+            </div>
         </main>
 
         <footer class="bg-white text-center text-xs mt-12 p-4" role="contentinfo">

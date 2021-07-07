@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="The personal site and blog of Jay Tyrrell">
 
-        <title>Configuration | Jay Tyrrell</title>
+        <title>Time zones and date strings | Jay Tyrrell</title>
 
         <link rel="home" href="https://jaytyrrell.co">
         
@@ -75,16 +75,109 @@
         <main role="main" class="flex-auto w-full">
             <div class="bg-gray-050 py-8 border-b border-gray-100 mb-8">
                 <div class="max-w-4xl mx-auto px-4">
-                        <h2 class="mb-0">Configuration</h2>
+                        <h2 class="mb-0">Time zones and date strings</h2>
                 </div>
             </div>
 
             <div class="max-w-4xl mx-auto px-4">
-                    <div class="mb-8">
-        <p>These posts are all related to configuring your Jigsaw blog starter template.</p>
+                    
+    <p class="text-gray-700 text-lg mb-2">Published July 2, 2021</p>
+
+                        <a
+                href="/blog/categories/code"
+                title="View posts in code"
+                class="inline-block bg-gray-050 hover:bg-blue-050 hover:text-blue-800 border-0 text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >code</a>
+            
+    <div class="mt-8">
+        <p>Recently, I ran into an issue with time zones and date strings. I was running an <a href="https://expressjs.com/">Express app</a> and the <code>toDate</code> sanitizer from <a href="https://github.com/validatorjs/validator.js">validator.js</a> via <a href="https://express-validator.github.io/docs/">express validator</a>.</p>
+
+<p>Just for illustrative purposes, let's say I want to delete the oldest users that fall within a specific date range by making a request like this.</p>
+
+<pre><code class="language-js">axios.delete('/users', {
+  startDate: '2020-06-01',
+  endDate: '2020-09-01'
+})
+</code></pre>
+
+<p>My route definition could look like this.</p>
+
+<pre><code class="language-js">app.delete('/users',
+  body('startDate').toDate(),
+  body('endDate').toDate(),
+  (req, res) =&gt; {
+    const startDate = req.body.startDate
+    const endDate = req.body.endDate
+
+    // Delete all users where their created_at
+    // is between startDate and endDate
+  }
+)
+</code></pre>
+
+<p>Then, I can expect <code>startDate</code> and <code>endDate</code> to be instances of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> object. If you console log them you should see this.</p>
+
+<pre><code class="language-js">startDate 2020-06-01T00:00:00.000Z
+endDate 2020-08-01T00:00:00.000Z
+</code></pre>
+
+<p>Since there was no time portion in the request, the Date object interpreted it as midnight UTC. If there were any users that have a <code>created_at</code> column of 05/31/2020 at 9:00pm Eastern, they would be incorrectly deleted. The reason is because their <code>created_at</code> timestamp would be stored in the database as <code>2020-06-01T01:00:00.000Z</code> UTC.</p>
+
+<p>One solution to this problem would be to pass the timezone in the request like this.</p>
+
+<pre><code class="language-js">axios.delete('/users', {
+  startDate: '2020-06-01',
+  endDate: '2020-09-01',
+  timezone: 'America/New_York'
+})
+</code></pre>
+
+<p>Then, to remove the <code>toDate</code> sanitizers.</p>
+
+<pre><code class="language-js">app.delete('/users',
+  (req, res) =&gt; {
+    // ...
+  }
+)
+</code></pre>
+
+<p>You can manually parse the dates using a library like <a href="https://moment.github.io/luxon/">Luxon</a>.</p>
+
+<pre><code class="language-js">import { DateTime } from 'luxon'
+
+app.delete('/users', (req, res) =&gt; {
+  const timezone = req.body.timezone
+  const startDate = DateTime.fromFormat(req.body.startDate, 'yyyy-MM-dd', { zone: timezone })
+    .startOf('day')
+    .toUTC()
+    .toJSDate()
+  const endDate = DateTime.fromFormat(req.body.endDate, 'yyyy-MM-dd', { zone: timezone })
+    .startOf('day')
+    .toUTC()
+    .toJSDate()
+
+  // ...
+})
+</code></pre>
+
+<p>Now if you console log the start and end date, you should get the correct times.</p>
+
+<pre><code class="language-js">startDate 2020-06-01T04:00:00.000Z
+endDate 2020-08-01T04:00:00.000Z
+</code></pre>
     </div>
 
-                </div>
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                            <a href="https://jaytyrrell.co/blog/custom-ordering-algorithm" title="Older Post: Custom Ordering Algorithm">
+                    &LeftArrow; Custom Ordering Algorithm
+                </a>
+                    </div>
+
+        <div>
+                    </div>
+    </nav>
+            </div>
         </main>
 
         <footer class="bg-white text-center text-xs mt-12 p-4" role="contentinfo">

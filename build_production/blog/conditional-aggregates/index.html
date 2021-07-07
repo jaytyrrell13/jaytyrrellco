@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="The personal site and blog of Jay Tyrrell">
 
-        <title>Configuration | Jay Tyrrell</title>
+        <title>Conditional Aggregates | Jay Tyrrell</title>
 
         <link rel="home" href="https://jaytyrrell.co">
         
@@ -75,16 +75,103 @@
         <main role="main" class="flex-auto w-full">
             <div class="bg-gray-050 py-8 border-b border-gray-100 mb-8">
                 <div class="max-w-4xl mx-auto px-4">
-                        <h2 class="mb-0">Configuration</h2>
+                        <h2 class="mb-0">Conditional Aggregates</h2>
                 </div>
             </div>
 
             <div class="max-w-4xl mx-auto px-4">
-                    <div class="mb-8">
-        <p>These posts are all related to configuring your Jigsaw blog starter template.</p>
+                    
+    <p class="text-gray-700 text-lg mb-2">Published February 8, 2021</p>
+
+                        <a
+                href="/blog/categories/code"
+                title="View posts in code"
+                class="inline-block bg-gray-050 hover:bg-blue-050 hover:text-blue-800 border-0 text-gray-800 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >code</a>
+            
+    <div class="mt-8">
+        <p>Let's say in your database you have a posts table with an id column and a status column among others:</p>
+
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>published</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>scheduled</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>drafted</td>
+</tr>
+</tbody>
+</table>
+
+<p>In an admin panel, if we wanted to show the count of the posts with a particular status, we could write separate queries for each status like this.</p>
+
+<pre><code class="language-sql">select count(*) from posts where status = 'published';
+select count(*) from posts where status = 'scheduled';
+select count(*) from posts where status = 'drafted';
+</code></pre>
+
+<p>A better approach would be to perform a single query using Conditional Aggregates. In MySQL, you can use a <code>case</code> statement inside the parenthesis of the <code>count</code> function.</p>
+
+<pre><code class="language-sql">select
+    count(case status when 'published' then 1 end) as published,
+    count(case status when 'scheduled' then 1 end) as scheduled,
+    count(case status when 'drafted' then 1 end) as drafted
+from posts;
+</code></pre>
+
+<p>The results should show the count of each status in a separate column.</p>
+
+<table>
+<thead>
+<tr>
+  <th>published</th>
+  <th>scheduled</th>
+  <th>drafted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2</td>
+  <td>2</td>
+  <td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>as</code> keyword at the end of the count function is aliasing it as the name of the status for convenience. If you don't include it, the name of each column would be the entire <code>count()</code> function call.</p>
     </div>
 
-                </div>
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                    </div>
+
+        <div>
+                            <a href="https://jaytyrrell.co/blog/custom-ordering-algorithm" title="Newer Post: Custom Ordering Algorithm">
+                    Custom Ordering Algorithm &RightArrow;
+                </a>
+                    </div>
+    </nav>
+            </div>
         </main>
 
         <footer class="bg-white text-center text-xs mt-12 p-4" role="contentinfo">
