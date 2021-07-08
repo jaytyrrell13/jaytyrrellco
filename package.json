@@ -12,6 +12,6 @@
         "postcss": "^8.3.5",
         "sass": "^1.35.2",
         "sass-loader": "^12.1.0",
-        "tailwindcss": "^1.9.6"
+        "tailwindcss": "^2.2.4"
     }
 }
