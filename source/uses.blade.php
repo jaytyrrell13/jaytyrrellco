@@ -10,12 +10,12 @@ title: Uses
 @section('body')
 <p>After getting inspired from <a href="https://uses.tech/" target="_blank">Uses.tech</a>, here's a list of the tech I use regularly.</p>
 
-<p><strong>Last updated</strong>: 12/19/2021</p>
+<p><strong>Last updated</strong>: 02/28/2022</p>
 
 <ul class="mt-3">
     <li><strong>Desk</strong>: <a href="https://www.bushbusinessfurniture.com/OurFurniture/ShopbyCollection/BushBusinessFurnitureCollections/SeriesC.aspx?pf=140&ProductSKU=SRC071MASU&Finish=Mahogany" target="_blank">Bush Business Furniture Series C</a></li>
     <li><strong>Headphones</strong>: <a href="https://www.sony.com/electronics/headband-headphones/wh-1000xm3" target="_blank">Sony WH-1000XM3</a></li>
-    <li><strong>Keyboard</strong>: <a href="https://www.amazon.com/gp/product/B071ZZTNBM/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Apple Magic Keyboard with Numeric Keypad</a></li>
+    <li><strong>Keyboard</strong>: <a href="https://mistelkeyboard.com/products/d11cf7a73da49468e2a530b4cf18e76c" target="_blank">Mistel Barocco MD770</a> Split Keyboard</li>
     <li><strong>Laptop</strong>: 13" MacBook Air
         <ul>
             <li>M1 2020</li>
@@ -25,7 +25,7 @@ title: Uses
     </li>
     <li><strong>Laptop Stand</strong>: <a href="https://www.amazon.com/gp/product/B089RK4TB3/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">CR Aluminum Laptop Stand</a></li>
     <li><strong>Monitor</strong>: <a href="https://www.amazon.com/gp/product/B07MKT2BNB/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1" target="_blank">LG 27UL650</a></li>
-    <li><strong>Mouse</strong>: <a href="https://www.amazon.com/gp/product/B0148NPIQK/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Logitech M535</a></li>
+    <li><strong>Mouse</strong>: <a href="https://www.amazon.com/Anker-Ergonomic-Optical-Vertical-Buttons/dp/B00FPAVUHC" target="_blank">Anker Vertical Mouse</a></li>
     <li><strong>Phone</strong>: <a href="https://www.apple.com/iphone-xr/specs/" target="_blank">iPhone XR</a>
         <ul>
             <li>64 GB Storage</li>
