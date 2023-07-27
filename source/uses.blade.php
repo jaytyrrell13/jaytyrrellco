@@ -10,7 +10,7 @@ title: Uses
 @section('body')
 <p>After getting inspired from <a href="https://uses.tech/" target="_blank">Uses.tech</a>, here's a list of the tech I use regularly.</p>
 
-<p><strong>Last updated</strong>: 02/28/2022</p>
+<p><strong>Last updated</strong>: 07/27/2023</p>
 
 <ul class="mt-3">
     <li><strong>Desk</strong>: <a href="https://www.bushbusinessfurniture.com/OurFurniture/ShopbyCollection/BushBusinessFurnitureCollections/SeriesC.aspx?pf=140&ProductSKU=SRC071MASU&Finish=Mahogany" target="_blank">Bush Business Furniture Series C</a></li>
@@ -32,7 +32,6 @@ title: Uses
         </ul>
     </li>
     <li><strong>USB C Hub</strong> <a href="https://www.amazon.com/gp/product/B07QQ11BP6/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Vava 8-in-1 Adapter</a></li>
-    <li><strong>Watch</strong>: <a href="https://www.apple.com/apple-watch-series-3/" target="_blank">Apple Watch Series 3</a></li>
     <li><strong>Work Laptop</strong>: 13" MacBook Pro with Touchbar
         <ul>
             <li>2018</li>
@@ -45,17 +44,17 @@ title: Uses
 
 <h4 class="mt-8 mb-0">Software</h4>
 <ul class="mt-3">
-    <li><a href="https://www.alfredapp.com/" target="_blank">Alfred</a></li>
     <li><a href="https://bitwarden.com/" target="_blank">Bitwarden</a></li>
     <li><a href="https://duckduckgo.com/" target="_blank">DuckDuckGo</a></li>
-    <li><a href="https://github.com/tonsky/FiraCode" target="_blank">Fira Code</a> font</li>
+    <li><a href="https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono" target="_blank">JetBrains Mono</a> font from Nerd Fonts</li>
     <li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a></li>
-    <li><a href="https://sw.kovidgoyal.net/kitty/">Kitty Terminal</a> with ZSH and <a href="https://github.com/bgrnwd/everforest-kitty" target="_blank">Everforest</a> theme</li>
-    <li><a href="https://neovim.io/" target="_blank">Neovim</a></li>
+    <li><a href="https://sw.kovidgoyal.net/kitty/">Kitty Terminal</a> with ZSH</li>
+    <li><a href="https://neovim.io/" target="_blank">Neovim</a> with <a href="https://github.com/rmehri01/onenord.nvim" target="_blank">onenord.nvim</a> (light)</li>
     <li><a href="https://www.notion.so/" target="_blank">Notion</a></li>
     <li><a href="https://protonmail.com/" target="_blank">ProtonMail</a></li>
+    <li><a href="https://www.raycast.com/" target="_blank">Raycast</a></li>
+    <li><a href="https://tutanota.com/" target="_blank">Tutanota</a></li>
     <li><a href="https://apps.apple.com/us/app/unsplash-wallpapers/id1284863847?mt=12" target="_blank">Unsplash Wallpapers</a></li>
-    <li><a href="https://code.visualstudio.com/" target="_blank">VS Code</a></li>
     <li><a href="https://www.youneedabudget.com/" target="_blank">You Need A Budget</a></li>
 </ul>
 @endsection
