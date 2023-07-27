@@ -31,7 +31,7 @@ title: Uses
             <li>64 GB Storage</li>
         </ul>
     </li>
-    <li><strong>USB C Hub</strong> <a href="https://www.amazon.com/gp/product/B07QQ11BP6/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Vava 8-in-1 Adapter</a></li>
+    <li><strong>USB C Hub</strong>: <a href="https://www.amazon.com/gp/product/B07QQ11BP6/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Vava 8-in-1 Adapter</a></li>
     <li><strong>Work Laptop</strong>: 13" MacBook Pro with Touchbar
         <ul>
             <li>2018</li>
