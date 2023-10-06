@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import headshot from '../images/headshot.jpeg';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Link from '../components/Link.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Home">
+	<h1 slot="heading" class="font-serif text-5xl text-white">👋 Hey, I'm Jay!</h1>
+
+	<article>
+		<section class="mb-12 grid grid-flow-col gap-4">
+			<div>
+				<p class="mb-4">I'm a full-stack developer at <Link href="https://ableto.com" target="_blank">AbleTo</Link>, a leading provider of virtual behavioral health care.</p>
+				<p>When I'm not behind a computer, I enjoy spending time with my wife and son, reading, hiking, and swimming. I'm passionate about solving problems and constantly learning.</p>
+			</div>
+			<Image src={headshot} alt="Headshot of Jay Tyrrell" width="150" height="150" class="rounded-full border-slate-600 border-4 shadow" />
+		</section>
+
+		<section class="mb-12">
+			<h2 class="text-3xl font-serif border-b-slate-200 border-b-4">Articles</h2>
+
+			<ul>
+			{posts.map(post => (
+				<li class="my-2">
+					<div class="flex">
+						<div class="flex-1"><Link href={`/blog/${post.slug}`}>{post.data.title}</Link></div>
+						{post.data.pubDate.toLocaleDateString()}
+					</div>
+				</li>
+			))}
+			</ul>
+		</section>
+		<section>
+			<h2 class="text-3xl font-serif border-b-slate-200 border-b-4">Projects</h2>
+			<ul>
+				<li class="my-2"><Link href="https://github.com/jaytyrrell13/static.nvim" target="_blank">static.nvim</Link> - Run static site generator commands within Neovim</li>
+				<li class="my-2"><Link href="https://github.com/jaytyrrell13/jaytyrrellco" target="_blank">jaytyrrell.co</Link> - This website</li>
+			</ul>
+
+		</section>
+	</article>
+</Layout>

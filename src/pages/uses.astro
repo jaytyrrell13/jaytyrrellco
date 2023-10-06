@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Link from '../components/Link.astro'
+---
+
+<Layout title="Uses">
+	<h1 slot="heading" class="font-serif text-5xl text-white">🖥️ Uses</h1>
+
+	<article>
+		<section>
+			<p class="mb-4">After getting inspired from <Link href="https://uses.tech/">Uses.tech</Link>, here's a list of tech I use regularly.</p>
+			<p class="mb-4"><strong>Last Updated</strong>: 10/02/2023</p>
+			<h4 class="mt-8 font-serif text-3xl">Hardware</h4>
+			<ul>
+				<li><strong>Desk</strong>: <Link href="https://www.bushbusinessfurniture.com/OurFurniture/ShopbyCollection/BushBusinessFurnitureCollections/SeriesC.aspx?pf=140&ProductSKU=SRC071MASU&Finish=Mahogany" target="_blank">Bush Business Furniture Series C</Link></li>
+				<li><strong>Headphones</strong>: <Link href="https://www.sony.com/electronics/headband-headphones/wh-1000xm3" target="_blank">Sony WH-1000XM3</Link></li>
+				<li><strong>Keyboard</strong>: <Link href="https://mistelkeyboard.com/products/d11cf7a73da49468e2a530b4cf18e76c" target="_blank">Mistel Barocco MD770</Link> Split Keyboard</li>
+				<li><strong>Laptop</strong>: 13" MacBook Air
+					<ul>
+						<li>M1 2020</li>
+						<li>16 GB Memory</li>
+						<li>256 GB Storage</li>
+					</ul>
+				</li>
+				<li><strong>Laptop Stand</strong>: <Link href="https://www.amazon.com/gp/product/B089RK4TB3/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">CR Aluminum Laptop Stand</Link></li>
+				<li><strong>Monitor</strong>: <Link href="https://www.amazon.com/gp/product/B07MKT2BNB/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1" target="_blank">LG 27UL650</Link></li>
+				<li><strong>Mouse</strong>: <Link href="https://www.amazon.com/Anker-Ergonomic-Optical-Vertical-Buttons/dp/B00FPAVUHC" target="_blank">Anker Vertical Mouse</Link></li>
+				<li><strong>Phone</strong>: <Link href="https://www.apple.com/iphone-xr/specs/" target="_blank">iPhone XR</Link>
+					<ul>
+						<li>64 GB Storage</li>
+					</ul>
+				</li>
+				<li><strong>USB C Hub</strong>: <Link href="https://www.amazon.com/gp/product/B07QQ11BP6/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1" target="_blank">Vava 8-in-1 Adapter</Link></li>
+				<li><strong>Watch</strong>: <Link href="https://www.apple.com/apple-watch-series-3/" target="_blank">Apple Watch Series 3</Link></li>
+				<li><strong>Work Laptop</strong>: 13" MacBook Pro with Touchbar
+					<ul>
+						<li>2018</li>
+						<li>2.7 GHz Intel Core i7</li>
+						<li>16 GB 2133 MHz LPDDR3</li>
+						<li>256 GB Storage</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h4 class="mt-8 font-serif text-3xl">Software</h4>
+			<ul>
+				<li><Link href="https://duckduckgo.com/" target="_blank">DuckDuckGo</Link></li>
+				<li><Link href="https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono" target="_blank">JetBrains Mono</Link> font from Nerd Fonts</li>
+				<li><Link href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</Link></li>
+				<li><Link href="https://sw.kovidgoyal.net/kitty/">Kitty Terminal</Link> with ZSH</li>
+				<li><Link href="https://neovim.io/" target="_blank">Neovim</Link> with <Link href="https://github.com/rmehri01/onenord.nvim" target="_blank">onenord.nvim</Link> (light)</li>
+				<li><Link href="https://www.notion.so/" target="_blank">Notion</Link></li>
+				<li><Link href="https://protonmail.com/" target="_blank">ProtonMail</Link></li>
+				<li><Link href="https://www.raycast.com/" target="_blank">Raycast</Link></li>
+				<li><Link href="https://tutanota.com/" target="_blank">Tutanota</Link></li>
+				<li><Link href="https://apps.apple.com/us/app/unsplash-wallpapers/id1284863847?mt=12" target="_blank">Unsplash Wallpapers</Link></li>
+				<li><Link href="https://www.youneedabudget.com/" target="_blank">You Need A Budget</Link></li>
+			</ul>
+		</section>
+	</article>
+</Layout>
+<style>
+ul {
+	list-style-type: disc;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+
+li {
+	margin-bottom: 1px;
+	margin-left: 24px;
+}
+
+li ul {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+</style>
