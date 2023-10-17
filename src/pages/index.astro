@@ -4,11 +4,9 @@ import { getCollection } from 'astro:content';
 import headshot from '../images/headshot.jpeg';
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import PostsList from '../components/PostsList.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = await getCollection('blog')
 ---
 
 <Layout title="Home">
@@ -26,16 +24,7 @@ const posts = (await getCollection('blog')).sort(
 		<section class="mb-12">
 			<h2 class="text-3xl font-serif border-b-slate-200 border-b-4">Articles</h2>
 
-			<ul>
-			{posts.map(post => (
-				<li class="my-2">
-					<div class="lg:flex mb-4 lg:mb-2">
-						<div class="lg:flex-1"><Link href={`/blog/${post.slug}`}>{post.data.title}</Link></div>
-						<FormattedDate date={post.data.pubDate} />
-					</div>
-				</li>
-			))}
-			</ul>
+			<PostsList posts={posts} />
 		</section>
 		<section>
 			<h2 class="text-3xl font-serif border-b-slate-200 border-b-4">Projects</h2>

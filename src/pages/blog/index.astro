@@ -1,12 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Link from '../../components/Link.astro'
-import FormattedDate from '../../components/FormattedDate.astro'
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+import Layout from '../../layouts/Layout.astro'
+import PostsList from '../../components/PostsList.astro'
+
+const posts = await getCollection('blog')
 ---
 
 <Layout title="Blog">
@@ -14,16 +12,7 @@ const posts = (await getCollection('blog')).sort(
 
 	<article>
 		<section>
-			<ul>
-				{posts.map(post => (
-					<li class="my-2">
-						<div class="lg:flex mb-4 lg:mb-2">
-							<div class="lg:flex-1"><Link href={`/blog/${post.slug}`}>{post.data.title}</Link></div>
-							<FormattedDate date={post.data.pubDate} />
-						</div>
-					</li>
-				))}
-			</ul>
+			<PostsList posts={posts} />
 		</section>
 	</article>
 </Layout>
