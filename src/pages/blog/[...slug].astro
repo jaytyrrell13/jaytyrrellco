@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 <Layout title={entry.data.title}>
-	<h1 slot="heading" class="font-serif text-4xl lg:text-5xl text-white">{entry.data.title}</h1>
+	<h1 slot="heading">{entry.data.title}</h1>
 
   <p class="mb-4 text-slate-700 text-base"><strong>Posted</strong>: <FormattedDate date={entry.data.pubDate} /></p>
 
