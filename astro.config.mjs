@@ -1,14 +1,19 @@
 import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jaytyrrell.co',
-  integrations: [tailwind()],
+  integrations: [],
+
   markdown: {
     shikiConfig: {
       theme: 'one-dark-pro'
     }
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
   }
 });
